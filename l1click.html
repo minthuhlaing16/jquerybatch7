@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>click</title>
+</head>
+<body>
+
+	<h1>Welcome to JQuery</h1>
+
+	<h3>This is awesome js library</h3>
+
+	<button type="button" id="clickme">Click Me</button>
+	<button type="button" id="dblclick">Double Click Me</button>
+
+	<button type="button" id="singleclk">Single Click Me</button>
+	<button type="reset" id="doubleclk">Double Click Me</button>
+
+	<button type="button" id="onclk">onclick</button>
+	<button type="button" id="ondblclk">ondblclick</button>
+
+	<script src="./jquery/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		//? Method 1
+		// $(document).ready(function(){
+		// 	console.log("hi");
+		// });
+
+		//? Method 2
+		// $(window.document).ready(function(){
+		// 	console.log("hello");
+		// });
+
+		//? Method 3
+		// jQuery(document).ready(function(){
+		// 	console.log("hello world");
+		// });
+
+		//? Method 4
+		jQuery(window.document).ready(function(){
+			// js revision
+
+			// document.getElementById("");
+			// document.getElementsByClassName("");
+			// document.getElementsByTagName("");
+
+			// document.querySelector("#");
+			// document.querySelector(".");
+			// document.querySelector("");
+
+			// document.querySelectorAll("#");
+			// document.querySelectorAll(".");
+			// document.querySelectorAll("");
+
+			// $("#");
+			// $(".");
+			// $("");
+
+			// js single click
+			// document.getElementById("clickme").addEventListener("click",function(){
+			// 	console.log("hello world");
+			// });
+
+			// js double click
+			// document.getElementById("dblclick").addEventListener("dblclick",function(){
+			// 	console.log("this is double click");
+			// });
+
+			// jquery single click
+			$("#clickme").click(function(){
+				console.log("this is single click from jquery.");
+			});
+
+			// jquery double click
+			$("#dblclick").dblclick(function(){
+				console.log("this is dbl click from jquery");
+			});
+
+			// bind()
+			$("#singleclk").bind("click",function(){
+				console.log("i am single from bind method..");
+			})
+
+			$("#doubleclk").bind("dblclick",function(){
+				console.log("I am double click from bind method..");
+
+				console.log("Type: "+ this.type); // type attribute ==> Type: reset
+				console.log('nodeName: '+ this.nodeName); // Element ==> nodeName: BUTTON
+			})
+
+			$("#onclk").on("click",function(){
+				console.log("hello John! from on click method");
+			});
+
+			$("#ondblclk").on("dblclick",function(){
+				console.log('Hello Susan, from on click method');
+			})
+		});
+	</script>	
+</body>
+</html>
