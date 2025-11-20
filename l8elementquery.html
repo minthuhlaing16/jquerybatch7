@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>elementquery</title>
+		<style>
+			body {
+				height: 100vh;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.container {
+				width: 500px;
+				background-color: #f4f4f4;
+				padding: 20px;
+				box-shadow: 0 10px 15px orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Myanmar</h1>
+			<h1>Singapore</h1>
+			<h1>Malaysia</h1>
+			<h1>Thailand</h1>
+			<h1>India</h1>
+		</div>
+
+		<script src="jquery/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				// $("h1").css({
+				// 	backgroundColor: "blue",
+				// 	textTransform: "uppercase",
+				// 	color: "#fff",
+				// });
+
+				// console.log($("h1"));
+				// console.log($("h1")[0]);
+				console.log($("h1").eq(0));
+				console.log($("h1").eq(2));
+
+				// $("h1")[0].css("background", "red"); // ? Error => element direct nae css function use loa ma ya buu , array phit mha ya tar
+
+				$("h1")
+					.eq(0)
+					.css("background-color", "orange")
+					.css("color", "white");
+
+				$("h1").eq(3).css({
+					background: "Orange",
+					fontSize: "12px",
+					color: "white",
+					letterSpacing: "2px",
+					textAlign: "center",
+				});
+			});
+		</script>
+	</body>
+</html>

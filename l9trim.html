@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>trim</title>
+	</head>
+	<body>
+		<script src="jquery/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				let greeting = "				hello world 				";
+				console.log(greeting);
+
+				greeting = $.trim(greeting);
+				console.log(greeting);
+
+				let saysomething = "\n\n 				welcome John Doe 				\n\n";
+				console.log(saysomething);
+
+				saysomething = jQuery.trim(saysomething);
+				console.log(saysomething);
+			});
+		</script>
+	</body>
+</html>

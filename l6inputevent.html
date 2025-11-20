@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>input event</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				height: 100vh;
+				background-color: #f4f4f4;
+
+				display: grid;
+				place-items: center;
+
+				padding: 0;
+				margin: 0;
+			}
+			.container {
+				width: 500px;
+				background: linear-gradient(360deg, red, blue);
+				color: white;
+				padding: 20px;
+				border: 2px solid orange;
+				border-radius: 10px;
+				box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+			}
+
+			.form-group {
+				margin: 20px 0;
+			}
+
+			.btn {
+				padding: 5px 15px;
+				background: none;
+				border: none;
+				color: white;
+				font-size: 20px;
+				cursor: pointer;
+
+				display: flex;
+				justify-self: center;
+
+				transition: all 0.5s ease-in;
+			}
+
+			.btn:hover {
+				border-bottom: 1px solid yellow;
+				border-bottom-right-radius: 5px;
+				border-bottom-left-radius: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<form action="" method="">
+				<div class="form-group">
+					<label for="firstname">First Name</label>
+					<input
+						type="text"
+						name="firstname"
+						id="firstname"
+						class="form-control"
+						autocomplete="off"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="lastname">Last Name</label>
+					<input
+						type="text"
+						name="lastname"
+						id="lastname"
+						class="form-control"
+						autocomplete="off"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input
+						type="email"
+						name="email"
+						id="email"
+						class="form-control"
+						autocomplete="off"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="password">Password(select password)</label>
+					<input
+						type="password"
+						name="password"
+						id="password"
+						class="form-control"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="country">Country</label>
+					<select name="country" id="country" class="form-select">
+						<option disabled selected>Choose Country</option>
+						<option value="indo">Indonesia</option>
+						<option value="malay">Malaysia</option>
+						<option value="sg">Singapore</option>
+						<option value="br">Brunei</option>
+						<option value="thai">Thailand</option>
+						<option value="ind">India</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="age">Age</label>
+					<input
+						type="number"
+						name="age"
+						id="age"
+						class="form-control"
+						min="18"
+						max="60"
+						value="18"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="phone">Phone</label>
+					<input
+						type="text"
+						name="phone"
+						id="phone"
+						class="form-control"
+						placeholder="+95"
+						autocomplete="off"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="nrc">Nrc Number</label>
+					<input
+						type="text"
+						name="nrc"
+						id="nrc"
+						class="form-control"
+						autocomplete="off"
+					/>
+				</div>
+				<button type="submit" class="btn">Register</button>
+			</form>
+		</div>
+
+		<script src="jquery/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$("form").submit(function (e) {
+					e.preventDefault();
+					// console.log("form have been submitted..");
+				});
+
+				// ? blur() Function
+				$("#firstname").blur(function () {
+					console.log("firstname is working inside blur function...");
+				});
+
+				// change() Function ==> value pyaung twr mha answer hwat mar
+				$("#lastname").change(function () {
+					console.log(
+						"lastname is working inside change function...",
+					);
+				});
+
+				$("select").change(function () {
+					console.log("select is working inside change function...");
+				});
+
+				// focus() ==> cursor lar cha tar nae a phay hwat p
+				$("#age").focus(function () {
+					console.log("Age is working inside focus function...");
+				});
+
+				// focusin() ==> focusin() === focus()
+				$("#phone").focusin(function () {
+					console.log("Phone is working inside focusin function...");
+				});
+
+				// focusout()
+				// $("#nrc").focusout(function () {
+				// 	console.log("nrc is working inside focus out function...");
+				// });
+
+				// click()
+				$("#email").click(function () {
+					console.log("Email has click");
+				});
+
+				// select()
+				$("#password").select(function () {
+					console.log("Password has selected...");
+				});
+
+				// keydown()
+				// $("#nrc").keydown(function () {
+				// 	console.log(
+				// 		"hello I am key down function...",
+				// 		$("#nrc").val(),
+				// 	);
+				// });
+
+				// keypress()
+				// $("#nrc").keypress(function () {
+				// 	console.log(
+				// 		"hello I am key press function...",
+				// 		$("#nrc").val(),
+				// 	);
+				// });
+
+				// keyup()
+				$("#nrc").keyup(function () {
+					console.log(
+						"hello I am key up function...",
+						$("#nrc").val(),
+					);
+				});
+			});
+		</script>
+	</body>
+</html>
