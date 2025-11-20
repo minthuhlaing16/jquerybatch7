@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>contents method with filter method</title>
+	</head>
+	<body>
+		<h1>Hello <u>World</u></h1>
+		<h2>Welcome to <u>JQuery library</u></h2>
+		<h2>Are you ready to learn <i>JQuery</i></h2>
+
+		<script src="jquery/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				const gettext = $("h1").contents();
+				console.log(gettext);
+
+				const gettxt = $("h1").contents().text();
+				console.log(gettxt); // ? Hello World
+
+				const gettexts = $("h2").text();
+				console.log(gettexts);
+
+				// ? h1 hte ka kaung kaw h2 hte ka kaung kaw lol chin tal so yin
+				const multipletext = $("h1,h2").text();
+				console.log(multipletext);
+
+				// ? content nae so yin
+				// const multipletexts = $("h1,h2").contents();
+				const multipletexts = $("h1,h2").contents().text();
+				console.log(multipletexts);
+
+				const getutag = $("h1,h2").contents().filter("u");
+				console.log(getutag);
+				console.log(getutag.text());
+
+				const getitag = $("h1,h2").contents().filter("i").text();
+				console.log(getitag);
+
+				const getuanditag = $("h1,h2").contents().filter("u,i").text();
+				console.log(getuanditag);
+
+				// const gethtml = $("h1").contents().html();
+				// console.log(gethtml); // ? undefined --> contents() nae html() nae twal loa ma ya buu
+
+				const gethtmltext = $("h1").contents().filter("u").html();
+				console.log(gethtmltext); // ? World
+
+				const gethtmlh2 = $("h2").html(); // ? html() nae so ta khu bae pay tal , text() nae so shi ta lout pay tal
+				console.log(gethtmlh2);
+			});
+		</script>
+	</body>
+</html>

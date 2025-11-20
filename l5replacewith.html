@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>replacewith</title>
+		<style type="text/css">
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.container {
+				width: 500px;
+				background-color: #f4f4f4;
+				padding: 20px;
+			}
+
+			.container h1 {
+				color: green;
+			}
+
+			.container h2 {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- todo Note ==> h1 ko h2 nae a sar htoe say chin tar -->
+		<div class="container">
+			<h1>Are you ready to learn jQuery.</h1>
+			<p id="caption">This is jquery version 3.7.1</p>
+			<button type="button" class="btn">Click</button>
+		</div>
+
+		<script src="jquery/jquery.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$(".btn").click(function () {
+					$("h1").replaceWith("<h2>Hello John How are you?</h2>");
+					$("#caption").replaceWith(
+						`<i style="display:block;color:green;margin-bottom:20px">Welcome to Matrix we are developer</i>`,
+					);
+					$("button").replaceWith(
+						"<input type='button' value='Thanks' />",
+					);
+				});
+			});
+		</script>
+	</body>
+</html>
