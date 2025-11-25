@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>offset and position</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .offset {
+        display: flex;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+      }
+      .red {
+        background-color: red;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .green {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="offset">
+        <div class="box red">Box1</div>
+        <div class="box blue">Box2</div>
+        <div class="box yellow">Box3</div>
+        <div class="box green">Box4</div>
+      </div>
+
+      <table>
+        <tr>
+          <td id="offsetresultleft"></td>
+          <td id="offsetresulttop"></td>
+        </tr>
+
+        <tr>
+          <td id="posresultleft"></td>
+          <td id="posresulttop"></td>
+        </tr>
+      </table>
+    </div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".box").click(function () {
+          const getoffset = $(this).offset();
+          //   console.log(getoffset);
+          $("#offsetresultleft").html(`<h2>offsetX value is : ${getoffset.left}</h2>`).css("color", "navy");
+          $("#offsetresulttop").html(`<h2>offsetY value is : ${getoffset.top}</h2>`).css("color", "navy");
+        });
+
+        $(".box").click(function () {
+          const positionresult = $(this).position();
+          $("#posresultleft").html(`<p>position left result is : ${positionresult.left}</p>`);
+          $("#posresulttop").html(`<p>position top result is : ${positionresult.top}</p>`);
+        });
+      });
+    </script>
+  </body>
+</html>

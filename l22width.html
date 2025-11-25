@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>width</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .box1 {
+        width: 100px;
+        height: 100px;
+        border: 5px solid black;
+        padding: 10px;
+        margin: 5px;
+      }
+      .box2 {
+        width: 200px;
+        height: 100px;
+      }
+      .box3 {
+        width: 300px;
+        height: 100px;
+      }
+      .box4 {
+        width: 400px;
+        height: 100px;
+      }
+      .box5 {
+        width: 500px;
+        height: 100px;
+      }
+      .red {
+        background-color: red;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .green {
+        background-color: green;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .violet {
+        background-color: violet;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box1 red">box1</div>
+      <div class="box2 green">box2</div>
+      <div class="box3 blue">box3</div>
+      <div class="box4 yellow">box4</div>
+      <div class="box5 violet">box5</div>
+    </div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".box1").click(function () {
+          console.log(`Box1 width is: ${$(this).width()}.`);
+          console.log(`Box1 inner width is: ${$(this).innerWidth()}.`); // width+padding
+          console.log(`Box1 outer width is: ${$(this).outerWidth()}.`); // width+padding+border
+        });
+        $(".box2").click(function () {
+          console.log(`Box2 width is: ${$(this).width()}.`);
+          console.log(`Box2 inner width is: ${$(this).innerWidth()}.`);
+          console.log(`Box2 outer width is: ${$(this).outerWidth()}.`);
+        });
+        $(".box3").click(function () {
+          console.log(`Box3 width is: ${$(this).width()}.`);
+          console.log(`Box3 inner width is: ${$(this).innerWidth()}.`);
+          console.log(`Box3 outer width is: ${$(this).outerWidth()}.`);
+        });
+        $(".box4").click(function () {
+          console.log(`Box4 width is: ${$(this).width()}.`);
+          console.log(`Box4 inner width is: ${$(this).innerWidth()}.`);
+          console.log(`Box4 outer width is: ${$(this).outerWidth()}.`);
+        });
+        $(".box5").click(function () {
+          console.log(`Box5 width is: ${$(this).width()}.`);
+          console.log(`Box5 inner width is: ${$(this).innerWidth()}.`);
+          console.log(`Box5 outer width is: ${$(this).outerWidth()}.`);
+        });
+      });
+    </script>
+  </body>
+</html>

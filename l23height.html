@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>width</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+      }
+      .box1 {
+        width: 100px;
+        height: 100px;
+        border: 5px solid black;
+        padding: 10px;
+        margin: 5px;
+      }
+      .box2 {
+        width: 100px;
+        height: 200px;
+      }
+      .box3 {
+        width: 100px;
+        height: 300px;
+      }
+      .box4 {
+        width: 100px;
+        height: 400px;
+      }
+      .box5 {
+        width: 100px;
+        height: 500px;
+      }
+      .red {
+        background-color: red;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .green {
+        background-color: green;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .violet {
+        background-color: violet;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box1 red">box1</div>
+      <div class="box2 green">box2</div>
+      <div class="box3 blue">box3</div>
+      <div class="box4 yellow">box4</div>
+      <div class="box5 violet">box5</div>
+    </div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".box1").click(function () {
+          console.log(`Box1 height is: ${$(this).height()}.`);
+          console.log(`Box1 inner height is: ${$(this).innerHeight()}.`); // height+padding
+          console.log(`Box1 outer height is: ${$(this).outerHeight()}.`); // height+padding+border
+        });
+        $(".box2").click(function () {
+          console.log(`Box2 height is: ${$(this).height()}.`);
+          console.log(`Box2 inner height is: ${$(this).innerHeight()}.`);
+          console.log(`Box2 outer height is: ${$(this).outerHeight()}.`);
+        });
+        $(".box3").click(function () {
+          console.log(`Box3 height is: ${$(this).height()}.`);
+          console.log(`Box3 inner height is: ${$(this).innerHeight()}.`);
+          console.log(`Box3 outer height is: ${$(this).outerHeight()}.`);
+        });
+        $(".box4").click(function () {
+          console.log(`Box4 height is: ${$(this).height()}.`);
+          console.log(`Box4 inner height is: ${$(this).innerHeight()}.`);
+          console.log(`Box4 outer height is: ${$(this).outerHeight()}.`);
+        });
+        $(".box5").click(function () {
+          console.log(`Box5 height is: ${$(this).height()}.`);
+          console.log(`Box5 inner height is: ${$(this).innerHeight()}.`);
+          console.log(`Box5 outer height is: ${$(this).outerHeight()}.`);
+        });
+      });
+    </script>
+  </body>
+</html>
