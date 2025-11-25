@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>clone</title>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Hello Thailand</h1>
+    </div>
+    <div class="container"></div>
+    <button type="button">Clone Me</button>
+    <script type="text/javascript" src="jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // clone
+        // $("button").click(function () {
+        //   $("h1").clone().appendTo(".container");
+        // });
+
+        // $("button").click(function () {
+        //   $(".box h1").clone().appendTo(".container");
+        // });
+
+        // $("button").click(function () {
+        //   $(".container").append($(".box h1").clone());
+        // });
+
+        $("button").click(function () {
+          $(".container").prepend($(".box h1").clone());
+        });
+      });
+    </script>
+  </body>
+</html>
