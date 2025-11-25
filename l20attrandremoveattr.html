@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>add and remove attribute</title>
+    <style>
+      body {
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+      }
+
+      .container {
+        width: 800px;
+        background: #f4f4f4;
+        padding: 20px;
+      }
+
+      .text-primary {
+        color: blue;
+      }
+
+      .text-light {
+        color: #fff;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .bg-info {
+        background: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <img src="./img/logo.jpg" alt="logo1" width="100" />
+        <h1 id="1">Hello Yangon</h1>
+        <h1 id="2">Hello Bago</h1>
+        <h1 id="3">Hello Mandalay</h1>
+        <h1 id="4">Hello kalaw</h1>
+      </div>
+      <button type="button" id="txtpri-btn">text-primary</button>
+      <button type="button" id="bginfo-btn">bg-info</button>
+      <button type="button" id="txtbg-btn">text-background</button>
+      <button type="button" id="multiattr-btn">multi-attr</button>
+      <button type="button" id="rmattr-btn">remove-attr</button>
+      <button type="button" id="txtcnt-btn">text-center</button>
+      <button type="button" id="rmtxtlg-btn">remove-text-light</button>
+      <button type="button" id="hasclass-btn">has-class</button>
+      <button type="button" id="toggclass-btn">toggle-class</button>
+    </div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // attr(attribute,value)
+        $("#txtpri-btn").click(function () {
+          $("h1").attr("class", "text-primary");
+        });
+
+        $("#bginfo-btn").click(function () {
+          $("h1").attr("class", "bg-info");
+        });
+
+        $("#txtbg-btn").click(function () {
+          $("h1").attr("class", "text-light bg-info");
+        });
+
+        $("#multiattr-btn").click(function () {
+          $("img").attr({
+            src: "img/logo1.jpg",
+            alt: "haha",
+            title: "I am logo1",
+            width: "150px",
+          });
+        });
+
+        $("#rmattr-btn").click(function () {
+          // $("h1").removeAttr("class");
+          // $("h1").removeAttr("class id");
+          $("h1").removeAttr("id class");
+        });
+
+        // addClass(value)
+        $("#txtcnt-btn").click(function () {
+          // $("h1").attr("class", "text-center");
+          $("h1").addClass("text-center");
+        });
+
+        // removeClass(value)
+        $("#rmtxtlg-btn").click(function () {
+          $("h1").removeClass("text-light");
+        });
+
+        // hasClass
+        $("#hasclass-btn").click(function () {
+          alert($("h1").hasClass("text-light"));
+        });
+
+        // toggleClass(value)
+        $("#toggclass-btn").click(function () {
+          $("h1").toggleClass("text-center text-primary");
+        });
+      });
+    </script>
+  </body>
+</html>
