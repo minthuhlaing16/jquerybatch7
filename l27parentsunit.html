@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>parent unit</title>
+    <style>
+      body {
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        width: 900px;
+        background-color: #f4f4f4;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        padding: 20px;
+      }
+      .div {
+        border: 1px solid #000;
+        padding: 30px;
+      }
+      ul {
+        list-style: none;
+        border: 1px dashed green;
+        padding: 20px;
+      }
+      ul li {
+        border: 1px dotted violet;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="div1" class="div">
+        I am in div 1
+        <div id="div2" class="div">
+          I am in div 2
+          <div id="div3" class="div">
+            I am in div 3
+            <ul>
+              <li><h1>Hello box 1</h1></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <button type="button" id="cls-btn">Close</button>
+      <button type="button" id="parunt-btn">parents unit</button>
+    </div>
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

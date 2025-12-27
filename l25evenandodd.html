@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>even and odd</title>
+    <style>
+      body {
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .container {
+        width: 900px;
+        background-color: #f4f4f4;
+        padding: 20px;
+
+        display: flex;
+      }
+
+      .box {
+        width: 150px;
+        height: 300px;
+      }
+
+      .square1 {
+        background-color: red;
+      }
+
+      .square2 {
+        background-color: blue;
+      }
+
+      .square3 {
+        background-color: green;
+      }
+
+      .square4 {
+        background-color: yellow;
+      }
+
+      .square5 {
+        background-color: violet;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>even and odd</h1>
+      <p>This is awesome jquery version 3.7.1</p>
+    </div>
+
+    <div class="container">
+      <div class="box square1">box 1</div>
+      <hr />
+      <div class="box square2">box 2</div>
+      <hr />
+      <div class="box square3">box 3</div>
+      <hr />
+      <div class="box square4">box 4</div>
+      <hr />
+      <div class="box square5">box 5</div>
+    </div>
+
+    <div>
+      <button type="button" id="even-btn">Even button</button>
+      <button type="button" id="odd-btn">Odd button</button>
+      <button type="button" id="slice-btn">Slice button</button>
+    </div>
+
+    <script src="./jquery/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // even() the index start from 0
+        $("#even-btn").click(function () {
+          $(".box").even().css("background-color", "black");
+        });
+        // odd() the index start from 0
+        $("#odd-btn").click(function () {
+          $(".box").odd().css("background-color", "black");
+        });
+        // slice(start index,stop length) the index start from 0
+        // $("#slice-btn").click(function () {
+        //   $(".box").slice(1, 4).css("background-color", "steelblue");
+        // });
+        $("#slice-btn").click(function () {
+          $(".box").slice(0, 3).css("background-color", "steelblue");
+        });
+      });
+    </script>
+  </body>
+</html>
