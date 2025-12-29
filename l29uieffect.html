@@ -96,7 +96,7 @@
       <button type="button" id="highlight-btn">Highlight</button>
       <button type="button" id="puff-btn">Puff</button>
       <button type="button" id="pulsate-btn">Pulsate</button>
-      <button type="button" id="side-btn">Side</button>
+      <button type="button" id="size-btn">Size</button>
       <button type="button" id="slide-btn">Slide</button>
     </div>
     <script src="jquery/jquery.min.js"></script>
@@ -208,6 +208,35 @@
         $(".square10").hide("puff", 2000);
         $("#puff-btn").click(function () {
           $(".square10").show("puff", 2000);
+        });
+        $(".square11").hide();
+        $("#pulsate-btn").click(function () {
+          // $(".square11").effect("pulsate", 2000);
+          // $(".square11").effect(
+          //   "pulsate",
+          //   {
+          //     times: 10,
+          //   },
+          //   2000
+          // );
+          $(".square11").show("pulsate", 1000);
+        });
+        $(".square12").hide();
+        $("#size-btn").click(function () {
+          // $(".square12").effect("size", 2000);
+          $(".square12").show("size", 2000);
+        });
+        $(".square13").hide();
+        $("#slide-btn").click(function () {
+          // $(".square13").effect("slide", 2000);
+          $(".square13").effect(
+            "slide",
+            {
+              direction: "down",
+            },
+            2000
+          );
+          // $(".square13").show("slide", 2000);
         });
       });
     </script>
