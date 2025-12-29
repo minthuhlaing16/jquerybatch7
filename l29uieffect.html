@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ui effect</title>
+    <!-- jquery ui  css 1 js 1 -->
+    <link rel="stylesheet" href="./jqueryui/jquery-ui.min.css" />
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        width: 1200px;
+        background-color: #f4f4f4;
+        display: flex;
+        margin: 5px 10px;
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        margin: 0 5px;
+      }
+      .square1 {
+        background-color: red;
+      }
+      .square2 {
+        background-color: blue;
+      }
+      .square3 {
+        background-color: green;
+      }
+      .square4 {
+        background-color: yellow;
+      }
+      .square5 {
+        background-color: purple;
+      }
+      .square6 {
+        background-color: indigo;
+      }
+      .square7 {
+        background-color: crimson;
+      }
+      .square8 {
+        background-color: navy;
+      }
+      .square9 {
+        background-color: forestgreen;
+      }
+      .square10 {
+        background-color: violet;
+      }
+      .square11 {
+        background-color: orange;
+      }
+      .square12 {
+        background-color: pink;
+      }
+      .square13 {
+        background-color: burlywood;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box square1">box 1</div>
+      <div class="box square2">box 2</div>
+      <div class="box square3">box 3</div>
+      <div class="box square4">box 4</div>
+      <div class="box square5">box 5</div>
+      <div class="box square6">box 6</div>
+      <div class="box square7">box 7</div>
+      <div class="box square8">box 8</div>
+      <div class="box square9">box 9</div>
+      <div class="box square10">box 10</div>
+      <div class="box square11">box 11</div>
+      <div class="box square12">box 12</div>
+      <div class="box square13">box 13</div>
+    </div>
+    <div class="control">
+      <button type="button" id="shake-btn">Shake</button>
+      <button type="button" id="bounce-btn">Bounce</button>
+      <button type="button" id="blind-btn">Blind</button>
+      <button type="button" id="clip-btn">Clip</button>
+      <button type="button" id="drop-btn">Drop</button>
+      <button type="button" id="explode-btn">Explode</button>
+      <button type="button" id="fade-btn">Fade</button>
+      <button type="button" id="fold-btn">Fold</button>
+      <button type="button" id="highlight-btn">Highlight</button>
+      <button type="button" id="puff-btn">Puff</button>
+      <button type="button" id="pulsate-btn">Pulsate</button>
+      <button type="button" id="side-btn">Side</button>
+      <button type="button" id="slide-btn">Slide</button>
+    </div>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="./jqueryui/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".square1").hide();
+        $("#shake-btn").click(function () {
+          //   $(".square1").effect("shake", 2000);
+          //   $(".square1").effect("shake", "slow");
+          //   $(".square1").effect(
+          //     "shake",
+          //     {
+          //       direction: "left",
+          //       direction: "right",
+          //       direction: "up",
+          //       direction: "down",
+          //       distance: 100,
+          //       times: 10,
+          //     },
+          //     5000
+          //   );
+
+          $(".square1").show("shake", 2000);
+        });
+        $("#bounce-btn").click(function () {
+          //   $(".square2").effect("bounce", 2000);
+          //   $(".square2").effect(
+          //     "bounce",
+          //     {
+          //       direction: "down",
+          //       times: 4,
+          //       distance: 200,
+          //     },
+          //     2000
+          //   );
+          $(".square2").hide("bounce", 2000);
+        });
+        $(".square3").hide();
+        $("#blind-btn").click(function () {
+          //   $(".square3").effect("blind", 2000);
+          //   $(".square3").effect(
+          //     "blind",
+          //     {
+          //       direction: "down",
+          //     },
+          //     2000
+          //   );
+          $(".square3").show(
+            "blind",
+            {
+              direction: "down",
+            },
+            2000
+          );
+        });
+        $(".square4").hide();
+        $("#clip-btn").click(function () {
+          //   $(".square4").effect("clip", 2000);
+          //   $(".square4").effect("clip", "slow");
+          //   $(".square4").effect("clip", "fast");
+          $(".square4").show("clip", 2000);
+        });
+        $(".square5").hide();
+        $("#drop-btn").click(function () {
+          //   $(".square5").effect("drop", 2000);
+          //   $(".square5").effect(
+          //     "drop",
+          //     {
+          //       direction: "down",
+          //     },
+          //     2000
+          //   );
+          $(".square5").show(
+            "drop",
+            {
+              direction: "down",
+            },
+            2000
+          );
+        });
+        $(".square6").hide();
+        $("#explode-btn").click(function () {
+          //   $(".square6").effect("explode", 1000);
+          $(".square6").show("explode", 1000);
+        });
+        $(".square7").hide();
+        $("#fade-btn").click(function () {
+          //   $(".square7").effect("fade", 2000);
+          $(".square7").show("fade", 2000);
+        });
+        $(".square8").hide("fold", 1000);
+        $("#fold-btn").click(function () {
+          //   $(".square8").effect("fold", 1000);
+          $(".square8").show("fold", 1000);
+        });
+        $(".square9").hide();
+        $("#highlight-btn").click(function () {
+          //   $(".square9").effect("highlight", 1000);
+          //   $(".square9").effect(
+          //     "highlight",
+          //     {
+          //       color: "red",
+          //     },
+          //     2000
+          //   );
+          $(".square9").show("highlight", 2000);
+        });
+        $(".square10").hide("puff", 2000);
+        $("#puff-btn").click(function () {
+          $(".square10").show("puff", 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

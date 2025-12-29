@@ -23,8 +23,9 @@
         width: 300px;
         height: 300px;
         margin: 0 5px;
-        text-align: center;
-        line-height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 30px;
       }
@@ -223,6 +224,30 @@
           sq1.animate({ height: "300px" }, 1000);
           console.log(sq1.queue());
           console.log(sq1.queue().length);
+        });
+        $("#clickme-btn").click(function () {
+          $(".square1").html("<i>I am ready to start now</i>").animate({ width: "700px" }, 5000);
+          $(".square1").html("<i>ohh did you click stop btn</i>").animate({ width: "200px" }, 2000);
+        });
+        $("#stop-btn").click(function () {
+          $(".square1").stop();
+        });
+        $("#stoptrue-btn").click(function () {
+          $(".square1").stop(true);
+        });
+        $("#finish-btn").click(function () {
+          $(".square1").finish();
+        });
+        $("#dequeue-btn").click(function () {
+          let div5 = $(".square5");
+          div5.animate({ width: 400, height: 400 }, 1000);
+          div5.animate({ width: 200, height: 200 }, 1000);
+          div5.queue(function () {
+            div5.css("background-color", "indigo");
+            div5.dequeue();
+          });
+          div5.slideUp(1000);
+          div5.slideDown(1000);
         });
       });
     </script>
