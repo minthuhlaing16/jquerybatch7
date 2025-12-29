@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>effect</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        width: 900px;
+        background-color: #f4f4f4;
+        display: flex;
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        margin: 0 5px;
+        text-align: center;
+        line-height: 300px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+      }
+      .square1 {
+        background-color: red;
+      }
+      .square2 {
+        background-color: yellow;
+      }
+      .square3 {
+        background-color: green;
+      }
+      .square4 {
+        background-color: slateblue;
+      }
+      .square5 {
+        background-color: violet;
+      }
+      .control {
+        width: 900px;
+        background-color: #f4f4f4;
+        margin: 5px 0;
+        padding: 10px;
+      }
+      button {
+        margin: 2px;
+        font-size: 20px;
+        background: none;
+        border: none;
+        outline: none;
+        color: blue;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+      }
+      button:hover {
+        letter-spacing: 2px;
+        color: white;
+        background-color: black;
+        border-radius: 10px;
+        font-size: 25px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box square1">Box 1</div>
+      <div class="box square2">Box 2</div>
+      <div class="box square3">Box 3</div>
+      <div class="box square4">Box 4</div>
+      <div class="box square5">Box 5</div>
+    </div>
+    <div class="control">
+      <button type="button" id="hide-btn">Hide</button>
+      <button type="button" id="show-btn">Show</button>
+      <button type="button" id="toggle-btn">toggle</button>
+      <button type="button" id="fadeout-btn">FadeOut</button>
+      <button type="button" id="fadein-btn">FadeIn</button>
+      <button type="button" id="fadetoggle-btn">FadeToggle</button>
+      <button type="button" id="fadeto-btn">FadeTo</button>
+      <button type="button" id="slideup-btn">SlideUp</button>
+      <button type="button" id="slidedown-btn">SlideDown</button>
+      <button type="button" id="slidetoggle-btn">SlideToggle</button>
+      <button type="button" id="animate-btn">Animate</button>
+      <button type="button" id="delay-btn">Delay</button>
+      <button type="button" id="clickme-btn">ClickMe</button>
+      <button type="button" id="stop-btn">Stop</button>
+      <button type="button" id="stoptrue-btn">Stop (true)</button>
+      <button type="button" id="finish-btn">Finish</button>
+      <button type="button" id="dequeue-btn">Dequeue</button>
+    </div>
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#hide-btn").click(function () {
+          //   $(".square1").hide();
+          //   $(".square1,.square3").hide();
+          // even()  => start with index 0
+          //   $(".box").even().hide();
+          //   $(".box").odd().hide();
+          //   1s = 1000
+          //   $(".square1").hide(2000);
+          //   $(".square1,.square2").hide("slow");
+          $(".square1").hide(1000, function () {
+            $(".square2").hide(2000, function () {
+              $(".square3,.square4").hide(3000, function () {
+                $(".square5").hide(4000);
+              });
+            });
+          });
+        });
+
+        $("#show-btn").click(function () {
+          //   $(".square1").show();
+          //   $(".square1,.square3").show();
+          //   $(".box").even().show(2000);
+          //   $(".box").odd().show(2000);
+          $(".square1,.square2").show(1000, function () {
+            $(".square3,.square4").show(2000, function () {
+              $(".square5").show(5000);
+            });
+          });
+        });
+        $("#toggle-btn").click(function () {
+          //   $(".square1").toggle();
+          //   $(".square1,.square3").toggle();
+          //   $(".box").even().toggle(2000);
+          //   $(".box").odd().toggle(2000);
+          $(".square1").toggle(1000, function () {
+            $(".square2").toggle(2000, function () {
+              $(".square3,.square4").toggle(2000, function () {
+                $(".square5").toggle(1000);
+              });
+            });
+          });
+        });
+        $("#fadeout-btn").click(function () {
+          //   $(".square1").fadeOut();
+          //   $(".square1,.square2").fadeOut();
+          //   $(".box").even().fadeOut();
+          //   $(".box").odd().fadeOut();
+          $(".square1,.square2").fadeOut(2000, function () {
+            $(".square3").fadeOut(3000);
+          });
+        });
+        $("#fadein-btn").click(function () {
+          //   $(".square1").fadeIn();
+          //   $(".square1,.square2").fadeIn();
+          //   $(".box").even().fadeIn();
+          //   $(".box").odd().fadeIn();
+          $(".square3").fadeIn(2000, function () {
+            $(".square1,.square2").fadeIn(3000);
+          });
+        });
+        $("#fadetoggle-btn").click(function () {
+          //   $(".square1").fadeToggle();
+          //   $(".square1,.square5").fadeToggle();
+          //   $(".box").even().fadeToggle();
+          //   $(".box").odd().fadeToggle();
+          $(".square1").fadeToggle(1000, function () {
+            $(".square2").fadeToggle(2000);
+          });
+        });
+        // fadeTo(time,opacity)
+        $("#fadeto-btn").click(function () {
+          //   $(".square5").fadeTo(1000, 0.5);
+          $(".square5").fadeTo(1000, 0.5, function () {
+            $(".square4").fadeTo(1000, 0.3, function () {
+              $(".square3").fadeTo(1000, 0);
+            });
+          });
+        });
+        $("#slideup-btn").click(function () {
+          //   $(".square1").slideUp();
+          //   $(".square1,.square3").slideUp(1000);
+          $(".square1,.square2").slideUp(1000, function () {
+            $(".square3,.square5").slideUp(1000);
+          });
+        });
+        $("#slidedown-btn").click(function () {
+          //   $(".square1").slideDown();
+          //   $(".square1,.square2").slideDown(1000);
+          $(".square1,.square2").slideDown(1000, function () {
+            $(".square3,.square5").slideDown(1000);
+          });
+        });
+        $("#slidetoggle-btn").click(function () {
+          //   $(".square1").slideToggle();
+          //   $(".square1,.square3").slideToggle(1000);
+          $(".square1").slideToggle(1000, function () {
+            $(".square3,.square5").slideToggle(2000);
+          });
+        });
+        $("#animate-btn").click(function () {
+          //   $(".square1,.square3").animate({ height: "30px" });
+          //   $(".square1,.square3").animate({ height: "30px" }, 1000);
+          $(".square1,.square3").animate({ height: "50px" }, 1000, function () {
+            $(".square2,.square4").animate({ height: "100px", width: "200px", opacity: "0.5" }, 1000);
+          });
+        });
+        // delay not working in css function css()
+        $("#delay-btn").click(function () {
+          //   $(".square1").delay(2000).fadeOut(1000);
+          //   $(".square1")
+          //     .delay(2000)
+          //     .animate({ height: "200px", width: "400px" }, 1000, function () {
+          //       $(".square5").delay(1000).fadeOut(1000);
+          //     });
+          let sq1 = $(".square1");
+          sq1.animate({ height: "300px" }, 1000);
+          sq1.animate({ height: "100px" }, 1000);
+          sq1.animate({ height: "400px" }, 1000);
+          sq1.animate({ height: "500px" }, 1000);
+          sq1.animate({ height: "500px" }, 1000);
+          sq1.animate({ height: "200px" }, 1000);
+          sq1.animate({ height: "300px" }, 1000);
+          console.log(sq1.queue());
+          console.log(sq1.queue().length);
+        });
+      });
+    </script>
+  </body>
+</html>

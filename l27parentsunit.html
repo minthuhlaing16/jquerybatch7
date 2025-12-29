@@ -54,7 +54,37 @@
     </div>
     <script src="jquery/jquery.min.js"></script>
     <script>
-      $(document).ready(function () {});
+      $(document).ready(function () {
+        // closest()
+        $("#cls-btn").click(function () {
+          $("h1").closest("div").css({
+            color: "red",
+            fontSize: "25px",
+            border: "3px dotted red",
+          });
+        });
+        // parentsuntil()
+        $("#parunt-btn").click(function () {
+          // $("h1").parentsUntil("ul").css({
+          //   color: "slateblue",
+          //   fontSize: "30px",
+          //   border: "3px dashed red",
+          // });
+          // $("h1").parentsUntil("div").css({
+          //   color: "slateblue",
+          //   fontSize: "30px",
+          //   border: "5px solid indigo",
+          // });
+          $("h1").parentsUntil(".container").css({
+            color: "red",
+            fontSize: "30px",
+            border: "3px solid orange",
+          });
+        });
+      });
     </script>
   </body>
 </html>
+
+<!-- l27 to l28
+5:01 -->
