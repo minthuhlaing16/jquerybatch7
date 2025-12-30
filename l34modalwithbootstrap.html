@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal with Bootstrap</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="jqueryui/jquery-ui.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h3>Bootstrap modal trigger with jQuery</h3>
+      <button id="mybtn" class="btn btn-outline-info">Open Modal Box</button>
+      <div id="mymodal" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">Hello ! John Doe...</h3>
+              <button type="button" class="btn-close"></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Modal box text here Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolores veniam impedit, reprehenderit facilis quisquam sunt perspiciatis eligendi alias, officiis
+                aspernatur obcaecati maxime aliquam vitae voluptatem. Alias assumenda blanditiis unde!
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="mybtnclose" class="btn btn-secondary">Close</button>
+              <button type="button" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jqueryui/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#mybtn").click(function () {
+          //   $("#mymodal").modal("show");
+          $("#mymodal").modal("toggle");
+        });
+        $("#mybtnclose").click(function () {
+          $("#mymodal").modal("hide");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Picker with div</title>
+    <link rel="stylesheet" href="jqueryui/jquery-ui.min.css" />
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 900px;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+      .form-group {
+        margin: 10px 0;
+      }
+      .form-group label {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      .justify-content-end {
+        display: flex;
+        justify-content: end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" method="">
+        <div class="form-group">
+          <label for="workingday">Working Day</label>
+          <div id="workingday"></div>
+        </div>
+        <div class="form-group">
+          <label for="multiviews">Multi Views</label>
+          <div id="multiviews"></div>
+          <div class="justify-content-end">
+            <button type="submit" id="btn" class="btn">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jqueryui/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#workingday").datepicker();
+        $("#multiviews").datepicker({
+          numberOfMonths: 2,
+          //   dateFormat: "yy-mm-dd",
+          //   dateFormat: "yy-MM-dd",
+          //   dateFormat: "yy/MM/dd",
+          dateFormat: "yy MM dd",
+        });
+        $("#btn").click(function (e) {
+          let getworkingday = $("#workingday").val();
+          let getmultiviews = $("#multiviews").val();
+          alert(`This is your working day : ${getworkingday}`);
+          alert(`This is your Multiviews days : ${getmultiviews}`);
+          e.preventDefault();
+        });
+      });
+    </script>
+  </body>
+</html>
