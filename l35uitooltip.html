@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tooltip</title>
+    <link rel="stylesheet" href="jqueryui/jquery-ui.min.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      h1 {
+        font-family: Arial;
+        letter-spacing: 2px;
+        color: red;
+        text-decoration: line-through;
+        text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+      }
+      body {
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 900px;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+      .form-group {
+        margin: 20px 0;
+      }
+      .form-group label {
+        display: block;
+        font-size: 20px;
+        font-family: Arial;
+        letter-spacing: 3px;
+      }
+      .form-group label::after {
+        content: " :";
+      }
+      .form-group .form-control {
+        width: 100%;
+        margin: 10px 0;
+        font-size: 16px;
+        padding: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>How to use jq tooltip hover Me</h1>
+      <p>
+        Lorem
+        <a href="javascript:void(0);" id="ttone" title="This is tooltip of JQuery Ui. hello world My name is John Doe....">It is use for</a> ipsum dolor sit amet consectetur adipisicing elit.
+        Perferendis modi eius, cumque fuga eos suscipit, quod nesciunt asperiores unde, quam rem repellendus eaque nisi iste sint neque iusto harum nobis.
+      </p>
+      <form action="" method="">
+        <div class="form-group">
+          <label for="age">Yout Age</label>
+          <input type="number" name="age" id="age" class="form-control" autocomplete="off" title="Over 18" />
+        </div>
+      </form>
+    </div>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jqueryui/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // note document mar shi tat title mhan ta mya tooltip nae paw say chin yin
+        $(document).tooltip();
+
+        //     $("#age").tooltip({
+        //       //   show: 3000,
+        //       //   show: "bounce",
+        //       //   hide: "explode",
+        //       show: {
+        //         effect: "bounce",
+        //         duration: 2000,
+        //       },
+        //       hide: {
+        //         effect: "explode",
+        //         duration: 3000,
+        //       },
+        //       //   content: "This is JQuery Ui from hello world how are you?",
+        //       content: function () {
+        //         // return "<img src='./img/logo.jpg' width='100' />";
+        //         return `<img src='./img/logo.jpg' width='100' />
+        //             <h3>Hello John</h3>
+        //             <small>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, soluta obcaecati, enim nostrum aperiam adipisci quod velit nesciunt exercitationem quasi quae blanditiis, eos sequi modi. Consequatur quaerat reprehenderit explicabo neque?</small>
+        //         `;
+        //       },
+        //     });
+        //     $("#ttone").tooltip({
+        //       hide: 2000,
+        //     });
+      });
+    </script>
+  </body>
+</html>

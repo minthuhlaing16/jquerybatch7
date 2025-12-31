@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Bar</title>
+    <link rel="stylesheet" href="jqueryui/jquery-ui.min.css" />
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 1200px;
+        background: #f4f4f4;
+        padding: 20px;
+      }
+      .progress {
+        width: 100%;
+        height: 20px;
+        border-radius: 10px;
+        background-color: #fff;
+        margin: 20px 0;
+      }
+      .progress-bar {
+        width: 0%;
+        height: inherit;
+        border-radius: inherit;
+        background: linear-gradient(95deg, red, blue);
+        color: #fff;
+        text-align: center;
+        line-height: inherit;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+      .justify-content-end {
+        display: flex;
+        justify-content: end;
+      }
+      #btn {
+        padding: 12px;
+        background: linear-gradient(180deg, red, gray, blue);
+        color: white;
+        letter-spacing: 2px;
+        font-size: 20px;
+        border: none;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Downloader</h2>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <div class="justify-content-end">
+        <button type="button" id="btn">Click Me</button>
+      </div>
+    </div>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jqueryui/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        let progressbar = $(".progress-bar");
+        console.log(progressbar);
+        let idx = 0;
+        $("#btn").click(function () {
+          if (idx === 0) {
+            function incidxnumber() {
+              if (idx >= 100) {
+                clearInterval(timer);
+                $("#btn").attr("disabled", true);
+                window.location.href = "https://www.youtube.com";
+              } else {
+                idx++;
+                // console.log(idx);
+                progressbar.css({
+                  width: `${idx}%`,
+                });
+                progressbar.text(`${idx}%`);
+              }
+            }
+          }
+          let timer = setInterval(incidxnumber, 50);
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 36:03 -->
