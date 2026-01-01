@@ -204,8 +204,44 @@
 
           // Filter all columns => Method 1
           //   console.log($("#datatable tr").text().toLowerCase());
+          //   $("#datatable tr").filter(function () {
+          //     $(this).toggle($(this).text().toLowerCase().indexOf(getinput) > -1);
+          //   });
+
+          // Filter all columns => Method 2
+          //   $("#datatable tr").filter(function () {
+          //     if ($(this).text().toLowerCase().indexOf(getinput) > -1) {
+          //       $(this).show();
+          //     } else {
+          //       $(this).hide();
+          //     }
+          //   });
+
+          // Filter all columns => Method 3
+          //   $("#datatable tr").filter(function () {
+          //     if ($(this).text().toLowerCase().indexOf(getinput) > -1) {
+          //       $(this).css({
+          //         display: "",
+          //       });
+          //     } else {
+          //       $(this).css({
+          //         display: "none",
+          //       });
+          //     }
+          //   });
+
+          // name nae bae shar tar
+          //   $("#datatable tr").filter(function () {
+          //     $(this).toggle($(this).children(":eq(0)").text().toLowerCase().indexOf(getinput) > -1);
+          //   });
+
+          // age nae bae shar mal so yin
           $("#datatable tr").filter(function () {
-            $(this).toggle($(this).text().toLowerCase().indexOf(getinput) > -1);
+            if ($(this).children().eq(1).text().toLowerCase().indexOf(getinput) > -1) {
+              $(this).show();
+            } else {
+              $(this).hide();
+            }
           });
         });
       });
