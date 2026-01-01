@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>extension function</title>
+    <link rel="stylesheet" href="jqueryui/jquery-ui.min.css" />
+  </head>
+  <body>
+    <div id="box1">
+      <h3>This is box 1</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, nesciunt dolor. Ducimus doloribus deleniti doloremque rerum? Voluptates consequatur dolores itaque dicta hic, iure culpa
+        tenetur. Blanditiis modi inventore dicta magnam.
+      </p>
+    </div>
+    <div id="box2">
+      <h3>This is box 2</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam delectus unde consectetur assumenda numquam earum nostrum doloribus rerum eligendi beatae eos asperiores quas ab, minima tempore
+        repellat quos autem sunt?
+      </p>
+    </div>
+    <div id="box3">
+      <h3>This is box 3</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam delectus unde consectetur assumenda numquam earum nostrum doloribus rerum eligendi beatae eos asperiores quas ab, minima tempore
+        repellat quos autem sunt?
+      </p>
+    </div>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jqueryui/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // jQuery Extension function
+        // jQuery.fn.extend();
+        // $.fn.extend();
+        $.fn.extend({
+          disableselect: function () {
+            return this.css("user-select", "none");
+          },
+          selected: function () {
+            return this.css({
+              backgroundColor: "green",
+              color: "white",
+            });
+          },
+        });
+        jQuery.fn.changecolor = function () {
+          return this.css("color", "red");
+        };
+        $("#box1").disableselect();
+        $("#box2").selected();
+        $("#box3").changecolor();
+      });
+    </script>
+  </body>
+</html>
+<!-- 35:36 -->

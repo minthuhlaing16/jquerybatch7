@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>data and remove data</title>
+    <link rel="stylesheet" href="jqueryui/jquery-ui.min.css" />
+    <style>
+      body {
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 900px;
+        background: #f4f4f4;
+        padding: 12px;
+      }
+      .justify-content-end {
+        display: flex;
+        justify-content: end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h3>Student Data</h3>
+      </div>
+      <ul>
+        <li>Name: <span data-name="Mr.June">???</span></li>
+        <li>Age: <span data-age="25">???</span></li>
+        <li>Ph Number: <span data-phone-number="09333222455">???</span></li>
+      </ul>
+      <div class="justify-content-end">
+        <button type="button" class="newcaption-btn">New Caption</button>
+        <button type="button" class="removecaption-btn">Remove Caption</button>
+        <button type="button" class="showinfo-btn">Show Info</button>
+        <button type="button" class="attrid-btn">Attribute ID</button>
+        <button type="button" class="dataid-btn">Data ID</button>
+        <button type="button" class="object-btn">Object</button>
+        <button type="button" class="incid-btn">Increase ID</button>
+      </div>
+    </div>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jqueryui/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>
