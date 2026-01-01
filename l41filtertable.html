@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>filter table</title>
+    <link rel="stylesheet" href="jqueryui/jquery-ui.min.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 900px;
+        background: #f4f4f4;
+        padding: 20px;
+      }
+      .form-control {
+        width: 100%;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        padding: 12px;
+        margin-bottom: 10px;
+      }
+      .form-control:focus {
+        outline: none;
+      }
+      #datatable {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+      }
+      #datatable tr {
+        border-bottom: 1px solid #ccc;
+      }
+      #datatable tr:hover {
+        background-color: #fff;
+      }
+      #datatable th,
+      #datatable td {
+        text-align: left;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Customer List</h2>
+      <input type="text" id="search" class="form-control" placeholder="Search by ..." />
+      <table id="datatable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Aung Min</td>
+            <td>21</td>
+            <td>Yangon</td>
+          </tr>
+          <tr>
+            <td>Bo Bo</td>
+            <td>25</td>
+            <td>Mandalay</td>
+          </tr>
+          <tr>
+            <td>Ci Li</td>
+            <td>23</td>
+            <td>Bago</td>
+          </tr>
+          <tr>
+            <td>David Tun</td>
+            <td>28</td>
+            <td>Pyay</td>
+          </tr>
+          <tr>
+            <td>Ei Ei</td>
+            <td>20</td>
+            <td>Pathein</td>
+          </tr>
+          <tr>
+            <td>Fan Yi</td>
+            <td>27</td>
+            <td>Mawlamyine</td>
+          </tr>
+          <tr>
+            <td>Gyi Gyi</td>
+            <td>24</td>
+            <td>Taunggyi</td>
+          </tr>
+          <tr>
+            <td>Hla Win</td>
+            <td>30</td>
+            <td>Meiktila</td>
+          </tr>
+          <tr>
+            <td>Irene Cho</td>
+            <td>22</td>
+            <td>Kalaw</td>
+          </tr>
+          <tr>
+            <td>John Aung</td>
+            <td>26</td>
+            <td>Myitkyina</td>
+          </tr>
+          <tr>
+            <td>Kyaw Kyaw</td>
+            <td>29</td>
+            <td>Sagaing</td>
+          </tr>
+          <tr>
+            <td>Lin Lin</td>
+            <td>21</td>
+            <td>Hinthada</td>
+          </tr>
+          <tr>
+            <td>Min Thu</td>
+            <td>32</td>
+            <td>Magway</td>
+          </tr>
+          <tr>
+            <td>Nandar Oo</td>
+            <td>24</td>
+            <td>Pakokku</td>
+          </tr>
+          <tr>
+            <td>Oo Zaw</td>
+            <td>35</td>
+            <td>Loikaw</td>
+          </tr>
+          <tr>
+            <td>Phyo Wai</td>
+            <td>23</td>
+            <td>Thanlyin</td>
+          </tr>
+          <tr>
+            <td>Queen May</td>
+            <td>19</td>
+            <td>Pyin Oo Lwin</td>
+          </tr>
+          <tr>
+            <td>Ryan Lin</td>
+            <td>27</td>
+            <td>Naypyidaw</td>
+          </tr>
+          <tr>
+            <td>Soe Naing</td>
+            <td>34</td>
+            <td>Shwebo</td>
+          </tr>
+          <tr>
+            <td>Thu Zar</td>
+            <td>22</td>
+            <td>Dawei</td>
+          </tr>
+          <tr>
+            <td>U Myint</td>
+            <td>45</td>
+            <td>Monywa</td>
+          </tr>
+          <tr>
+            <td>Victor Aye</td>
+            <td>28</td>
+            <td>Kyaikto</td>
+          </tr>
+          <tr>
+            <td>Wai Yan</td>
+            <td>24</td>
+            <td>Thandwe</td>
+          </tr>
+          <tr>
+            <td>Xiao Lin</td>
+            <td>31</td>
+            <td>Lashio</td>
+          </tr>
+          <tr>
+            <td>Ye Yint</td>
+            <td>26</td>
+            <td>Kawthaung</td>
+          </tr>
+          <tr>
+            <td>Zin Mar</td>
+            <td>23</td>
+            <td>Kyaukpyu</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jqueryui/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#search").keyup(function () {
+          let getinput = $(this).val().toLowerCase();
+          //   console.log(getinput);
+
+          // Filter all columns => Method 1
+          //   console.log($("#datatable tr").text().toLowerCase());
+          $("#datatable tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(getinput) > -1);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
