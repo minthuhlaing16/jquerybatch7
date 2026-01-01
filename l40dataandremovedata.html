@@ -22,6 +22,11 @@
         display: flex;
         justify-content: end;
       }
+      .justify-content-end button {
+        margin: 0 5px;
+        padding: 10px;
+        font-size: 15px;
+      }
     </style>
   </head>
   <body>
@@ -38,16 +43,98 @@
         <button type="button" class="newcaption-btn">New Caption</button>
         <button type="button" class="removecaption-btn">Remove Caption</button>
         <button type="button" class="showinfo-btn">Show Info</button>
-        <button type="button" class="attrid-btn">Attribute ID</button>
-        <button type="button" class="dataid-btn">Data ID</button>
+        <button type="button" class="attrid-btn" data-id="123456">Attribute ID</button>
+        <button type="button" class="dataid-btn" data-id="456789">Data ID</button>
         <button type="button" class="object-btn">Object</button>
-        <button type="button" class="incid-btn">Increase ID</button>
+        <button type="button" class="incid-btn" data-id="21">Increase ID</button>
       </div>
     </div>
     <script src="jquery/jquery.min.js"></script>
     <script src="jqueryui/jquery-ui.min.js"></script>
     <script>
-      $(document).ready(function () {});
+      $(document).ready(function () {
+        $(".newcaption-btn").click(function () {
+          const setnewcaption = $("div").data("newcaption", "Customer Info:");
+          //   console.log(setnewcaption);
+          const getnewcaption = $("div").data("newcaption");
+          //   console.log(getnewcaption);
+          $("h3").text(getnewcaption);
+          let sayhi = "hello sir";
+          console.log(sayhi);
+        });
+        $(".removecaption-btn").click(function () {
+          //   console.log(sayhi);
+          console.log("Before removing: ", $("div").data("newcaption"));
+          $("div").removeData("newcaption");
+          console.log("After removing: ", $("div").data("newcaption"));
+        });
+        $(".showinfo-btn").click(function () {
+          //   $("ul li:first span").text("Mr John Doe.");
+          //   let getname = $("ul li:first span").attr("data-name");
+          //   console.log(getname);
+          let getname = $("ul li:first span").data("name");
+          let getage = $("ul li:nth-child(2) span").data("age");
+          let getphone = $("ul li:last span").data("phone-number");
+          //   console.log(getname);
+          $("ul li:first span").text(getname);
+          $("ul li:nth-child(2) span").text(getage);
+          $("ul li:last span").text(getphone);
+        });
+        $(".attrid-btn").click(function () {
+          let getattributeid = $(this).attr("data-id");
+          console.log(getattributeid);
+          console.log(typeof getattributeid);
+        });
+        $(".dataid-btn").click(function () {
+          let dataid = $(this).data("id");
+          console.log(dataid);
+          console.log(typeof dataid);
+        });
+        $(".object-btn").click(function () {
+          let setinfo = $("div").data("info", {
+            objName: "John Doe",
+            objAge: 22,
+            objPhoneNumber: "093432425",
+          });
+          let getinfo = $("div").data("info");
+          //   console.log(getinfo);
+          let setName = $("ul li:first span");
+          let setAge = $("ul li:nth-child(2) span");
+          let setPhoneNumber = $("ul li:last span");
+          setName.text(getinfo.objName);
+          setAge.text(getinfo.objAge);
+          setPhoneNumber.text(getinfo.objPhoneNumber);
+        });
+        $(".incid-btn").click(function () {
+          // Method 1
+          //   let getid = $(this).data("id");
+          //   console.log(getid, typeof getid);
+          // Method 2
+          //   let getid1 = $(this).data().id;
+          //   console.log(getid1, typeof getid1);
+          //   Method 3
+          //   let getid2 = $(this).data().id;
+          //   console.log(getid2, typeof getid2);
+
+          //   Method 1
+          //   let getid = $(this).data("id");
+          //   getid++;
+          //   getid += 1;
+          //   console.log(getid);
+
+          // Method 2
+          //   let getid = $(this).data("id")++;
+          //   console.log(getid); // error
+
+          // Method 3
+          //   let getid = $(this).data().id++;
+          //   console.log(getid);
+
+          // Method 4
+          let getid = $(this).data()["id"]++;
+          console.log(getid);
+        });
+      });
     </script>
   </body>
 </html>
