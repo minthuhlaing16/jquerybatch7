@@ -31,7 +31,7 @@
         <div class="col-md-6">
           <form action="" method="">
             <div id="expboxes" class="mb-3 expboxes input-group">
-              <input type="text" name="exp" id="exp" class="form-control form-control-sm" placeholder="Enter Your Experience..." />
+              <input type="text" name="exp[]" id="exp" class="form-control form-control-sm" placeholder="Enter Your Experience..." />
             </div>
             <div class="d-flex justify-content-end">
               <button type="button" class="btn btn-danger btn-sm addbtn" data-increment="1">Add More</button>
@@ -57,12 +57,29 @@
           let getnewid = $(this).data("increment");
           getnewid++;
           let expboxes = $("#expboxes").wrap("<div></div>").parent().html();
-          console.log(expboxes);
+          // console.log(expboxes);
           $("#expboxes").unwrap();
           // insertBefore             .first()
-          $(expboxes).insertAfter($("#expboxes").last());
+          $(expboxes).insertAfter($(".expboxes").last());
+          $(".expboxes")
+            .last()
+            .attr("id", "expboxes" + getnewid);
+          $("#expboxes" + getnewid).append(`
+              <button type="button" class="btn btn-warning btn-sm removebtn ms-3" data-id="removebtn${getnewid}">Remove</button>
+          `);
           $(this).data("increment", getnewid);
-          console.log(getnewid);
+          // console.log(getnewid);
+        });
+        // Remove
+        // di lol khaw loa ma ya buu
+        // $(".removebtn").click(function () {
+        //   console.log("hey welcome");
+        // });
+
+        // di lol khaw
+        $(document).on("click", ".removebtn", function () {
+          // console.log("hay");
+          $(this).parent().remove();
         });
       });
     </script>

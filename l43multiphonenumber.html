@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>multi phone number</title>
+    <link rel="stylesheet" href="jqueryui/jquery-ui.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 900px;
+        background-color: #f4f4f4;
+        padding: 12px;
+      }
+      .form-group {
+        padding: 20px;
+      }
+      .form-group label {
+        display: block;
+        margin: 20px 0;
+        font-size: 20px;
+        font-family: Arial;
+        letter-spacing: 2px;
+      }
+      .form-group .form-control {
+        width: 95%;
+        padding: 12px;
+        border-radius: 12px;
+        font-size: 18px;
+      }
+      .form-group .form-control:focus {
+        outline: none;
+      }
+      .fas {
+        color: green;
+      }
+      .removebtn {
+        color: red;
+      }
+      .disabled {
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Multi phone number</h3>
+      <form action="" method="">
+        <div class="form-group">
+          <label for="phones">Mobile Phones</label>
+          <input type="text" name="phones[]" class="form-control" id="phones" placeholder="Enter Your Phones" autofocus /><a href="#" class="addbtn"><i class="fas fa-plus-circle fa-2xl"></i></a>
+        </div>
+      </form>
+    </div>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jqueryui/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>
