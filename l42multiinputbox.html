@@ -56,6 +56,11 @@
           //   let getnewid = $(this).data().increment++;
           let getnewid = $(this).data("increment");
           getnewid++;
+          let expboxes = $("#expboxes").wrap("<div></div>").parent().html();
+          console.log(expboxes);
+          $("#expboxes").unwrap();
+          // insertBefore             .first()
+          $(expboxes).insertAfter($("#expboxes").last());
           $(this).data("increment", getnewid);
           console.log(getnewid);
         });
