@@ -34,12 +34,13 @@
         display: block;
         margin: 20px 0;
         font-size: 20px;
-        font-family: Arial;
+        font-family: "Arial";
         letter-spacing: 2px;
       }
       .form-group .form-control {
         width: 95%;
         padding: 12px;
+        margin-bottom: 10px;
         border-radius: 12px;
         font-size: 18px;
       }
@@ -61,7 +62,7 @@
     <div class="container">
       <h3>Multi phone number</h3>
       <form action="" method="">
-        <div class="form-group">
+        <div class="form-group phonenumbers">
           <label for="phones">Mobile Phones</label>
           <input type="text" name="phones[]" class="form-control" id="phones" placeholder="Enter Your Phones" autofocus /><a href="#" class="addbtn"><i class="fas fa-plus-circle fa-2xl"></i></a>
         </div>
@@ -70,7 +71,34 @@
     <script src="jquery/jquery.min.js"></script>
     <script src="jqueryui/jquery-ui.min.js"></script>
     <script>
-      $(document).ready(function () {});
+      $(document).ready(function () {
+        let maxnumber = 5;
+        const addbtn = $(".addbtn");
+        const phonebox = $(".phonenumbers");
+        let newphoneelement;
+        let idx = 1;
+        // Add
+        addbtn.click(function(){
+          // idx++;
+          // console.log(idx);
+          if(idx < maxnumber){
+            idx++;
+            newphoneelement = ` <div><input type="text" name="phones[]" class="form-control" id="phones${idx}" placeholder="Enter Your Phones" autofocus /><a href="#" ><i class="fas fa-minus-circle fa-2xl removebtn"></i></a></div>`
+            $(phonebox).append(newphoneelement)
+          }else{
+            $(this).addClass("disabled");
+          }
+        })
+        // Remove
+        $(phonebox).on("click",".removebtn",function(){
+          console.log("hi I am remove btn")
+          $(this).parent().parent().remove();
+          idx--;
+          if(idx < maxnumber){
+            $(addbtn).removeClass("disabled")
+          }
+        })
+      })
     </script>
   </body>
 </html>

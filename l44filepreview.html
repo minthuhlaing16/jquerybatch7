@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input file preview</title>
+    <link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .container{
+            width: 900px;
+            background-color: #fffa90;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .form-group{
+            padding: 12px;
+        }
+        .form-group label{
+            display: block;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing:2px;
+            margin-bottom: 10px;
+        }
+        .justify-content-end{
+            display: flex;
+            justify-content: end;
+        }
+        .gallery{
+            width: 100%;
+            background: #eee;
+            color: #aaaaaa;
+            text-align: center;
+            padding: 10px 0;
+            margin: 10px;
+        }
+        .gallery.removetext span{
+            display: none;
+        }
+        .gallery img{
+            width: 100px;
+            height: 100px;
+            border: 2px dashed #aaa;
+            border-radius: 10px;
+            object-fit: cover;
+            padding: 5px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form action="" method="" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="coverphotos">Cover Photos</label>
+            <input type="file" id="coverphotos" name="coverphotos[]">
+        </div>
+        <div class="justify-content-end">
+            <button type="submit" class="btn">Upload</button>
+        </div>
+    </form>
+    <div class="gallery">
+        <span>Choose Images</span>
+    </div>
+</div>
+<script src="jquery/jquery.min.js"></script>
+<script src="jqueryui/jquery-ui.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+    })
+</script>
+</body>
+</html>
