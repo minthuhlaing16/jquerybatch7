@@ -5,35 +5,41 @@
     <title>input file preview</title>
     <link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
     <style>
-        *{
+        * {
             box-sizing: border-box;
         }
-        body{
+
+        body {
             height: 100vh;
             display: grid;
             place-items: center;
         }
-        .container{
+
+        .container {
             width: 900px;
             background-color: #fffa90;
             padding: 20px;
             border-radius: 10px;
         }
-        .form-group{
+
+        .form-group {
             padding: 12px;
         }
-        .form-group label{
+
+        .form-group label {
             display: block;
             font-size: 20px;
             font-weight: bold;
-            letter-spacing:2px;
+            letter-spacing: 2px;
             margin-bottom: 10px;
         }
-        .justify-content-end{
+
+        .justify-content-end {
             display: flex;
             justify-content: end;
         }
-        .gallery{
+
+        .gallery {
             width: 100%;
             background: #eee;
             color: #aaaaaa;
@@ -41,10 +47,12 @@
             padding: 10px 0;
             margin: 10px;
         }
-        .gallery.removetext span{
+
+        .gallery.removetext span {
             display: none;
         }
-        .gallery img{
+
+        .gallery img {
             width: 100px;
             height: 100px;
             border: 2px dashed #aaa;
@@ -60,7 +68,7 @@
     <form action="" method="" enctype="multipart/form-data">
         <div class="form-group">
             <label for="coverphotos">Cover Photos</label>
-            <input type="file" id="coverphotos" name="coverphotos[]">
+            <input type="file" id="coverphotos" name="coverphotos[]" multiple>
         </div>
         <div class="justify-content-end">
             <button type="submit" class="btn">Upload</button>
@@ -74,7 +82,32 @@
 <script src="jqueryui/jquery-ui.min.js"></script>
 <script>
     $(document).ready(function () {
+        let previewimage = function (input, output) {
+            // console.log(input,output)
+            if (input.files) {
+                let totalfiles = input.files.length;
+                // console.log(totalfiles);
 
+                if (totalfiles > 0) {
+                    $(output).addClass("removetext")
+                } else {
+                    $(output).removeClass("removetext")
+                }
+
+                for (let x = 0; x < totalfiles; x++) {
+                    // console.log(x);
+                    let filereader = new FileReader();
+                    filereader.readAsDataURL(input.files[x]);
+
+                    filereader.onload = function (e) {
+                        $($.parseHTML("<img>")).attr("src", e.target.result).appendTo(output)
+                    }
+                }
+            }
+        }
+        $("#coverphotos").change(function () {
+            previewimage(this, ".gallery")
+        })
     })
 </script>
 </body>
